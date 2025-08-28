@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/GovFlow_Tracker}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:1542005}
+    driver-class-name: org.postgresql.Driver
+
+  # --- JPA & Hibernate Configuration ---
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # --- Database Migration Configuration ---
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+jwt:
+  secret: ${JWT_SECRET:a-very-strong-and-long-secret-key-that-you-should-change}
+  expiration: 3600000 # 1 hour
+
+# ✅ START: Add this new section for file storage
+file:
+  upload-dir: ./uploads
+# ✅ END: Add this new section
