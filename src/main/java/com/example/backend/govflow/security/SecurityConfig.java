@@ -150,7 +150,7 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // السماح للفرونت إند (localhost:4200) بالوصول
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        configuration.setAllowedOrigins(Arrays.asList("govflow-trackerfrontend-production.up.railway.app"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "x-auth-token"));
         configuration.setAllowCredentials(true); // السماح بإرسال الكوكيز والـ headers
